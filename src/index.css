@@ -29,6 +29,12 @@ h3,
 p {
   margin-top: 0;
 }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
 @media (max-width: 768px) {
   .services-grid {
     grid-template-columns: 1fr !important;
@@ -65,7 +71,7 @@ p {
 
   .footer-grid {
     grid-template-columns: 1fr !important;
-    text-align: center 
+    text-align: center !important;
     padding-bottom: 120px !important;
   }
 
@@ -96,26 +102,24 @@ p {
    .reviews-section {
   padding: 45px 24px 90px !important;
 }
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+  }
 
-    .reviews-grid {
-      grid-template-columns: 1fr !important;
-      gap: 32px !important;
-    }
+  .reviews-grid > div {
+    border-left: none !important;
+    padding-left: 0 !important;
+    border-top: 1px solid #ccc;
+    padding-top: 24px;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
 
-    .reviews-grid > div {
-      border-left: none !important;
-      padding-left: 0 !important;
-      border-top: 1px solid #ccc;
-      padding-top: 24px;
-      height: auto !important;
-      min-height: auto !important;
-      overflow: visible !important;
-    }
-
-    .reviews-grid p {
-      height: auto !important;
-      min-height: auto !important;
-      overflow: visible !important;
-      white-space: normal !important;
-    }
+  .reviews-grid p {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    white-space: normal !important;
+  }
 }
