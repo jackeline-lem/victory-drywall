@@ -93,20 +93,29 @@ p {
     bottom: 16px !important;
     text-align: center;
   }
+   .reviews-section {
+  padding: 45px 24px 90px !important;
+}
+
     .reviews-grid {
-    grid-template-columns: 1fr !important;
-    gap: 28px !important;
-  }
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
 
-  .reviews-grid > div {
-    border-left: none !important;
-    padding-left: 0 !important;
-    border-top: 1px solid #ccc;
-    padding-top: 24px;
-  }
+    .reviews-grid > div {
+      border-left: none !important;
+      padding-left: 0 !important;
+      border-top: 1px solid #ccc;
+      padding-top: 24px;
+      height: auto !important;
+      min-height: auto !important;
+      overflow: visible !important;
+    }
 
-  .reviews-grid p {
-    overflow: visible !important;
-    white-space: normal !important;
-  }
+    .reviews-grid p {
+      height: auto !important;
+      min-height: auto !important;
+      overflow: visible !important;
+      white-space: normal !important;
+    }
 }

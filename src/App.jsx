@@ -209,7 +209,7 @@ export default function App() {
         </section>
 
         {/* REVIEWS */}
-          <section className="reviews"style={{ background: "#fbfaf5", padding: "45px 58px", color: "#000" }}>          <h2 style={{ textAlign: "center", fontSize: 35, fontWeight: 900, textTransform: "uppercase", margin: 0, color: "#000"}}>
+          <section className="reviews-section" style={{ background: "#fbfaf5", padding: "45px 58px", color: "#000" }}>          <h2 style={{ textAlign: "center", fontSize: 35, fontWeight: 900, textTransform: "uppercase", margin: 0, color: "#000"}}>
             What Our Clients Say
           </h2>
           <div style={{ width: 70, height: 4, background: yellow, margin: "10px auto 35px" }} />
