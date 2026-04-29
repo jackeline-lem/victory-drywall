@@ -214,8 +214,11 @@ export default function App() {
           </h2>
           <div style={{ width: 70, height: 4, background: yellow, margin: "10px auto 35px" }} />
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 35 }}>
-            {[
+        <div
+          className="reviews-grid"
+          style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 35 }}
+        >            
+          {[
               ["Kendra Strunk", "Victor did a huge job for us and it looks so nice. A lot of contractors commented on what a great job of texturing Victor did."],
               ["Iris Bonillo", "So impressed with the work this company did for us! Victory Drywall made rain damage look like nothing happened."],
               ["Angela Donley", "Responsive, communicative, and genuinely friendly. The whole process was quick, smooth, and fairly priced."]
