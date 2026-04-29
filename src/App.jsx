@@ -74,18 +74,80 @@ export default function App() {
               ✓ Clean & Respectful &nbsp;&nbsp;
               ✓ Built to Last
             </div>
+            {/* CONTACT FORM (HERO) */}
+      <p style={{ fontWeight: 600, marginTop: 20 }}>
+        Get a free estimate — no pressure.
+      </p>
+      <form
+    onSubmit={(e) => {
+      e.preventDefault();
 
+      const form = e.target;
+      const name = form.name.value;
+      const phone = form.phone.value;
+      const message = form.message.value;
+
+      const text = `Hi, this is ${name}. My number is ${phone}. ${message}`;
+
+      window.location.href = `sms:+19715333695?body=${encodeURIComponent(text)}`;
+    }}
+    style={{
+      marginTop: 20,
+      display: "flex",
+      flexDirection: "column",
+      gap: 10,
+      maxWidth: 400
+    }}
+  >
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      style={inputStyle}
+      required
+    />
+
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Your Phone Number"
+      style={inputStyle}
+      required
+    />
+
+    <textarea
+      name="message"
+      placeholder="Tell us about your project..."
+      rows={3}
+      style={inputStyle}
+      required
+    />
+
+    <button
+      type="submit"
+      style={{
+        background: "#f4c400",
+        border: "none",
+        padding: "12px",
+        fontWeight: 800,
+        cursor: "pointer"
+      }}
+    >
+      💬 Text Us
+    </button>
+  </form>
            <a
               href="tel:+19715333695"
-              style={{
-                background: "#f4c400",
-                color: "#000",
-                padding: "14px 22px", // keep your original sizing
-                fontWeight: 800,
-                textDecoration: "none",
-                display: "inline-block",
-                cursor: "pointer"
-              }}
+        style={{
+          marginTop: 20,
+          padding: "16px",
+          background: "#fff",
+          border: "1px solid #e5e5e5",
+          display: "flex",
+          flexDirection: "column",
+          gap: 10,
+          maxWidth: 400
+        }}
             >
               ☎ CALL (971) 533-3695
             </a>
@@ -144,14 +206,14 @@ export default function App() {
           }}
         >
           {/* WHITE TEXT AREA */}
-          <div
-            style={{
-              background: "#fff",
-              padding: "30px 24px",
-              minHeight: 280,
-              textAlign: "center"
-            }}
-          >
+            <div
+              style={{
+                background: "#fff",
+                padding: "24px 20px",
+                minHeight: "auto",
+                textAlign: "center"
+              }}
+            >
             <div
               style={{
                 width: 62,
@@ -196,7 +258,7 @@ export default function App() {
           {/* IMAGE SECTION */}
           <div
             style={{
-              height: 380,
+              height: 220,
               backgroundImage: `url("${image}")`,
               backgroundSize: "cover",
               backgroundPosition: "center top"
@@ -308,6 +370,85 @@ export default function App() {
           />
         </div>
       </footer>
+      {showQuoteForm && (
+  <div
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.7)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 2000,
+      padding: 20
+    }}
+  >
+    <div
+      style={{
+        background: "#fff",
+        width: "100%",
+        maxWidth: 620,
+        borderRadius: 10,
+        padding: 36,
+        position: "relative"
+      }}
+    >
+          <button
+            onClick={() => setShowQuoteForm(false)}
+            style={{
+              position: "absolute",
+              top: 14,
+              right: 18,
+              background: "none",
+              border: "none",
+              fontSize: 28,
+              cursor: "pointer"
+            }}
+          >
+            ×
+          </button>
+
+          <h2 style={{ textAlign: "center", fontSize: 34, fontWeight: 500 }}>
+            Get a Free Quote
+          </h2>
+
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              alert("Thanks! Please call (971) 533-3695 to complete your request.");
+              setShowQuoteForm(false);
+            }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 18,
+              marginTop: 28
+            }}
+          >
+            <input placeholder="First Name" required style={inputStyle} />
+            <input placeholder="Last Name" required style={inputStyle} />
+            <input placeholder="Phone Number" required style={inputStyle} />
+            <textarea placeholder="What is your message?" rows={4} required style={inputStyle} />
+
+            <button
+              type="submit"
+              style={{
+                background: "#e5c400",
+                border: "none",
+                padding: "18px",
+                fontWeight: 800,
+                color: "#fff",
+                borderRadius: 8,
+                fontSize: 18,
+                cursor: "pointer"
+              }}
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    )}
             <a
         href="tel:+19715333695"
         style={{
