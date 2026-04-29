@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+#root {
+  display: block;
+  text-align: initial;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 0 20px;
+  }
+
+  .site-header {
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 20px !important;
+    text-align: center;
+  }
+
+  .site-logo {
+    height: 90px !important;
+  }
+
+  .hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-text {
+    padding: 50px 24px !important;
+  }
+
+  .hero-title {
+    font-size: 48px !important;
+  }
+
+  .hero-image {
+    min-height: 360px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center 
+    padding-bottom: 120px !important;
+  }
+
+  .cta-section {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 24px;
+    padding: 40px 24px !important;
+  }
+  .footer-brand {
+      justify-content: center !important;
+  }
+  .cta-section h2 {
+    font-size: 40px !important;
+    line-height: 1.05 !important;
+  }
+
+  .cta-section > div {
+    width: 100%;
+  }
+
+  .sticky-call {
+    left: 16px;
+    right: 16px !important;
+    bottom: 16px !important;
+    text-align: center;
+  }
+}
