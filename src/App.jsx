@@ -1,4 +1,11 @@
 import React from "react";
+const inputStyle = {
+  padding: "14px 16px",
+  border: "1px solid #ddd",
+  borderRadius: 8,
+  fontSize: 16,
+  width: "100%"
+};
 
 export default function App() {
   const yellow = "#f2c400";
