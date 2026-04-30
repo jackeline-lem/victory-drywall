@@ -5,47 +5,81 @@ const inputStyle = {
   border: "1px solid #ddd",
   borderRadius: 8,
   fontSize: 16,
-  width: "100%"
+  width: "100%",
+  fontFamily: "Arial, sans-serif"
 };
 
 export default function App() {
+  const [showQuoteForm, setShowQuoteForm] = useState(false);
   const yellow = "#f2c400";
   const black = "#101116";
 
   return (
       <main style={{ fontFamily: "Arial, sans-serif", background: "#fff", color: "#111" }}>        
         {/* NAV */}
-        <header className="site-header" style={{
+      <header
+        className="site-header"
+        style={{
           display: "flex",
-          justifyContent: "space-between",
           alignItems: "center",
           padding: "15px 30px",
           background: "#0b0f1a"
-        }}>
-          {/* LOGO */}
-          <img className="site-logo"
-            src="/victory_drywall_logo.jpg"
-            alt="Victory Drywall Systems LLC"
-            style={{
-              height: 140,
-              objectFit: "contain"
-            }}
-          />
+        }}
+      >
+        {/* LOGO */}
+        <img
+          src="/victory_drywall_logo.jpg"
+          alt="Victory Drywall Systems LLC"
+          style={{
+            height: 140,
+            objectFit: "contain"
+          }}
+        />
 
-          {/* PHONE IN HEADER */}
+        {/* RIGHT SIDE */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 16,
+            marginLeft: "auto" // 🔥 pushes it to the far right
+          }}
+        >
+          {/* FACEBOOK */}
           <a
-            href="tel:+19715333695"
-            style={{
-              color: "#e0b000",
-              fontWeight: 700,
-              textDecoration: "none",
-              fontSize: 20
-            }}
+            href="https://www.facebook.com/share/18Xob9pnGW/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            ☎ (971) 533-3695
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+              alt="Facebook"
+              style={{
+                width: 32,
+                height: 32,
+                filter: "invert(100%) sepia(100%) grayscale(200%) brightness(150%)"
+              }}
+            />
           </a>
-        </header>
 
+          {/* PHONE */}
+        <a
+          href="tel:+19715333695"
+          style={{
+            color: "#f4c400",
+            fontWeight: 800,
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            fontSize: 18,
+            marginLeft: 6 // subtle separation from Facebook
+          }}
+        >
+          ☎ (971) 533-3695
+        </a>
+        </div>
+      </header>
         {/* HERO */}
         <section className="hero" 
           style={{
@@ -132,33 +166,44 @@ export default function App() {
     />
 
     <button
-      type="submit"
       style={{
         background: "#f4c400",
-        border: "none",
-        padding: "12px",
+        color: "#000",
+        padding: "14px 22px",
         fontWeight: 800,
-        cursor: "pointer"
+        fontSize: 16,
+        border: "none",
+        width: "100%",
+        maxWidth: 400,
+        cursor: "pointer",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 8
       }}
     >
-      💬 Text Us
+      💬 TEXT US
     </button>
+  
   </form>
-           <a
-              href="tel:+19715333695"
-        style={{
-          marginTop: 20,
-          padding: "16px",
-          background: "#fff",
-          border: "1px solid #e5e5e5",
-          display: "flex",
-          flexDirection: "column",
-          gap: 10,
-          maxWidth: 400
-        }}
-            >
-              ☎ CALL (971) 533-3695
-            </a>
+        <a
+          href="tel:+19715333695"
+          style={{
+            background: "#f4c400",
+            color: "#000",
+            padding: "14px 22px",
+            fontWeight: 800,
+            textDecoration: "none",
+            display: "inline-block",
+            borderRadius: 0,
+            marginTop: 10,
+            textAlign: "center",
+            width: "100%",
+            maxWidth: 400
+          }}
+        >
+          ☎ CALL (971) 533-3695
+        </a>
 
             <p style={{ marginTop: 25 }}>Let’s bring your space to life.</p>
           </div>
@@ -255,7 +300,7 @@ export default function App() {
                 fontSize: 14,
                 lineHeight: 1.45,
                 color: "#222",
-                maxWidth: 260,
+                maxWidth: 270,
                 margin: "0 auto"
               }}
             >
@@ -266,10 +311,12 @@ export default function App() {
           {/* IMAGE SECTION */}
           <div
             style={{
-              height: 220,
+              height: 280,
               backgroundImage: `url("${image}")`,
               backgroundSize: "cover",
-              backgroundPosition: "center top"
+              backgroundPosition: "center-top",
+              transform: "scale(1.09)"
+
             }}
           />
         </div>
@@ -343,7 +390,7 @@ export default function App() {
         <p>
           <b>🛡️ Licensed & Insured</b><br />
           Professional. Dependable.<br />
-          Peace of mind.
+          CCB #245312<br />
         </p>
 
         <p>
@@ -379,85 +426,13 @@ export default function App() {
         </div>
       </footer>
       {showQuoteForm && (
-  <div
-    style={{
-      position: "fixed",
-      inset: 0,
-      background: "rgba(0,0,0,0.7)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      zIndex: 2000,
-      padding: 20
-    }}
-  >
-    <div
-      style={{
-        background: "#fff",
-        width: "100%",
-        maxWidth: 620,
-        borderRadius: 10,
-        padding: 36,
-        position: "relative"
-      }}
-    >
-          <button
-            onClick={() => setShowQuoteForm(false)}
-            style={{
-              position: "absolute",
-              top: 14,
-              right: 18,
-              background: "none",
-              border: "none",
-              fontSize: 28,
-              cursor: "pointer"
-            }}
-          >
-            ×
-          </button>
-
-          <h2 style={{ textAlign: "center", fontSize: 34, fontWeight: 500 }}>
-            Get a Free Quote
-          </h2>
-
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Thanks! Please call (971) 533-3695 to complete your request.");
-              setShowQuoteForm(false);
-            }}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 18,
-              marginTop: 28
-            }}
-          >
-            <input placeholder="First Name" required style={inputStyle} />
-            <input placeholder="Last Name" required style={inputStyle} />
-            <input placeholder="Phone Number" required style={inputStyle} />
-            <textarea placeholder="What is your message?" rows={4} required style={inputStyle} />
-
-            <button
-              type="submit"
-              style={{
-                background: "#e5c400",
-                border: "none",
-                padding: "18px",
-                fontWeight: 800,
-                color: "#fff",
-                borderRadius: 8,
-                fontSize: 18,
-                cursor: "pointer"
-              }}
-            >
-              Send
-            </button>
-          </form>
+        <div>
+          {/* quote form modal */}
         </div>
-      </div>
-    )}
-            <a
+      )}
+
+      <a
+        className="sticky-call"
         href="tel:+19715333695"
         style={{
           position: "fixed",
